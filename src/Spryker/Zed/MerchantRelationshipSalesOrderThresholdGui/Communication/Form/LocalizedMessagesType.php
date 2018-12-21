@@ -8,15 +8,19 @@
 namespace Spryker\Zed\MerchantRelationshipSalesOrderThresholdGui\Communication\Form;
 
 use Spryker\Zed\Kernel\Communication\Form\AbstractType;
+use Spryker\Zed\MerchantRelationshipSalesOrderThresholdGui\Communication\Form\Type\ThresholdGroup\AbstractMerchantRelationshipThresholdType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\Callback;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
  * @method \Spryker\Zed\MerchantRelationshipSalesOrderThresholdGui\MerchantRelationshipSalesOrderThresholdGuiConfig getConfig()
  * @method \Spryker\Zed\MerchantRelationshipSalesOrderThresholdGui\Persistence\MerchantRelationshipSalesOrderThresholdGuiRepositoryInterface getRepository()
  * @method \Spryker\Zed\MerchantRelationshipSalesOrderThresholdGui\Communication\MerchantRelationshipSalesOrderThresholdGuiCommunicationFactory getFactory()
  */
-class LocalizedForm extends AbstractType
+class LocalizedMessagesType extends AbstractType
 {
     public const FIELD_MESSAGE = 'message';
 
@@ -44,6 +48,22 @@ class LocalizedForm extends AbstractType
         $builder
             ->add(static::FIELD_MESSAGE, TextType::class, [
                 'required' => false,
+                'constraints' => [
+                    new Callback(function ($value, ExecutionContextInterface $context) {
+                        /** @var \Symfony\Component\Form\Form $form */
+                        $form = $context->getObject();
+                        $parentThresholdGroupForm = $form->getParent()->getParent();
+                        $data = $parentThresholdGroupForm->getData();
+
+                        if (empty($data[AbstractMerchantRelationshipThresholdType::FIELD_THRESHOLD])) {
+                            return;
+                        }
+
+                        if (empty($value)) {
+                            $context->buildViolation((new NotBlank())->message)->addViolation();
+                        }
+                    }),
+                ],
             ]);
 
         return $this;
