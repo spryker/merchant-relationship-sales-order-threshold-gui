@@ -22,10 +22,5 @@ interface MerchantRelationshipThresholdDataProviderResolverInterface
         string $salesOrderThresholdTypeGroup
     ): ThresholdStrategyGroupDataProviderInterface;
 
-    /**
-     * @param string $salesOrderThresholdTypeGroup
-     *
-     * @return bool
-     */
     public function hasMerchantRelationshipThresholdDataProviderByStrategyGroup(string $salesOrderThresholdTypeGroup): bool;
 }

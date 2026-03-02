@@ -67,20 +67,12 @@ class MerchantRelationshipSalesOrderThresholdTable extends AbstractTable
      */
     protected $merchantRelationshipSalesOrderThresholdGuiRepository;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationshipSalesOrderThresholdGui\Persistence\MerchantRelationshipSalesOrderThresholdGuiRepositoryInterface $merchantRelationshipSalesOrderThresholdGuiRepository
-     */
     public function __construct(
         MerchantRelationshipSalesOrderThresholdGuiRepositoryInterface $merchantRelationshipSalesOrderThresholdGuiRepository
     ) {
         $this->merchantRelationshipSalesOrderThresholdGuiRepository = $merchantRelationshipSalesOrderThresholdGuiRepository;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $config = $this->setHeader($config);
@@ -102,11 +94,6 @@ class MerchantRelationshipSalesOrderThresholdTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return array
-     */
     protected function prepareData(TableConfiguration $config): array
     {
         $query = $this->prepareQuery();
@@ -123,9 +110,6 @@ class MerchantRelationshipSalesOrderThresholdTable extends AbstractTable
         return $results;
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery
-     */
     protected function prepareQuery(): SpyMerchantRelationshipQuery
     {
         /** @var \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery $query */
@@ -138,11 +122,6 @@ class MerchantRelationshipSalesOrderThresholdTable extends AbstractTable
         return $query;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function setHeader(TableConfiguration $config): TableConfiguration
     {
         $baseData = [
@@ -159,11 +138,6 @@ class MerchantRelationshipSalesOrderThresholdTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param array $item
-     *
-     * @return array
-     */
     protected function prepareRowData(array $item): array
     {
         $baseData = [
@@ -178,11 +152,6 @@ class MerchantRelationshipSalesOrderThresholdTable extends AbstractTable
         return $baseData;
     }
 
-    /**
-     * @param array $item
-     *
-     * @return string
-     */
     protected function buildLinks(array $item): string
     {
         $buttons = [];
@@ -196,11 +165,6 @@ class MerchantRelationshipSalesOrderThresholdTable extends AbstractTable
         return implode(' ', $buttons);
     }
 
-    /**
-     * @param array $queryResults
-     *
-     * @return array
-     */
     protected function prepareMerchantRelationshipThresholdLabels(array $queryResults): array
     {
         $merchantRelationshipIds = array_column($queryResults, static::COL_ID_MERCHANT_RELATIONSHIP);

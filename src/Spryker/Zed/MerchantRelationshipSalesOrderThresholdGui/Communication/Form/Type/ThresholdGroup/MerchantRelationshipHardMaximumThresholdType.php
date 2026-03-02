@@ -31,11 +31,6 @@ class MerchantRelationshipHardMaximumThresholdType extends AbstractMerchantRelat
         $this->addLocalizedForms($builder);
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);

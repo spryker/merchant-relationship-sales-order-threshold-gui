@@ -18,17 +18,11 @@ use Spryker\Zed\MerchantRelationshipSalesOrderThresholdGui\MerchantRelationshipS
  */
 class MerchantRelationshipSalesOrderThresholdGuiPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery
-     */
     public function getMerchantRelationshipPropelQuery(): SpyMerchantRelationshipQuery
     {
         return $this->getProvidedDependency(MerchantRelationshipSalesOrderThresholdGuiDependencyProvider::PROPEL_QUERY_MERCHANT_RELATIONSHIP);
     }
 
-    /**
-     * @return \Orm\Zed\MerchantRelationshipSalesOrderThreshold\Persistence\SpyMerchantRelationshipSalesOrderThresholdQuery
-     */
     public function getMerchantRelationshipSalesOrderThresholdPropelQuery(): SpyMerchantRelationshipSalesOrderThresholdQuery
     {
         return $this->getProvidedDependency(MerchantRelationshipSalesOrderThresholdGuiDependencyProvider::PROPEL_QUERY_MERCHANT_RELATIONSHIP_SALES_ORDER_THRESHOLD);

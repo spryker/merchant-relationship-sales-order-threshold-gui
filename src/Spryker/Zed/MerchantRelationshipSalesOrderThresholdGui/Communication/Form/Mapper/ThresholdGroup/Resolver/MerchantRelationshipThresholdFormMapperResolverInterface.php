@@ -22,10 +22,5 @@ interface MerchantRelationshipThresholdFormMapperResolverInterface
         string $salesOrderThresholdTypeGroup
     ): MerchantRelationshipThresholdFormMapperInterface;
 
-    /**
-     * @param string $salesOrderThresholdTypeGroup
-     *
-     * @return bool
-     */
     public function hasMerchantRelationshipThresholdFormMapperByStrategyGroup(string $salesOrderThresholdTypeGroup): bool;
 }

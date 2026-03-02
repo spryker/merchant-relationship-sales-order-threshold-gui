@@ -24,11 +24,6 @@ class MerchantRelationshipSalesOrderThresholdGuiToCompanyFacadeBridge implements
         $this->companyFacade = $companyFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyTransfer $companyTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyTransfer
-     */
     public function getCompanyById(CompanyTransfer $companyTransfer): CompanyTransfer
     {
         return $this->companyFacade->getCompanyById($companyTransfer);

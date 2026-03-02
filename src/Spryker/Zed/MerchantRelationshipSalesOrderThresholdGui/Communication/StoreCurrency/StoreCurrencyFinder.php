@@ -25,10 +25,6 @@ class StoreCurrencyFinder implements StoreCurrencyFinderInterface
      */
     protected $storeFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantRelationshipSalesOrderThresholdGui\Dependency\Facade\MerchantRelationshipSalesOrderThresholdGuiToCurrencyFacadeInterface $currencyFacade
-     * @param \Spryker\Zed\MerchantRelationshipSalesOrderThresholdGui\Dependency\Facade\MerchantRelationshipSalesOrderThresholdGuiToStoreFacadeInterface $storeFacade
-     */
     public function __construct(
         MerchantRelationshipSalesOrderThresholdGuiToCurrencyFacadeInterface $currencyFacade,
         MerchantRelationshipSalesOrderThresholdGuiToStoreFacadeInterface $storeFacade
@@ -37,12 +33,6 @@ class StoreCurrencyFinder implements StoreCurrencyFinderInterface
         $this->storeFacade = $storeFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     * @param string|null $storeCurrencyRequestParam
-     *
-     * @return \Generated\Shared\Transfer\CurrencyTransfer
-     */
     public function getCurrencyTransferFromRequestParam(StoreTransfer $storeTransfer, ?string $storeCurrencyRequestParam): CurrencyTransfer
     {
         if (!$storeCurrencyRequestParam) {
@@ -57,11 +47,6 @@ class StoreCurrencyFinder implements StoreCurrencyFinderInterface
         return $this->currencyFacade->fromIsoCode($currencyCode);
     }
 
-    /**
-     * @param string|null $storeCurrencyRequestParam
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     public function getStoreTransferFromRequestParam(?string $storeCurrencyRequestParam): StoreTransfer
     {
         if (!$storeCurrencyRequestParam) {

@@ -14,8 +14,5 @@ interface MerchantRelationshipSalesOrderThresholdGuiToLocaleFacadeInterface
      */
     public function getLocaleCollection(): array;
 
-    /**
-     * @return string
-     */
     public function getCurrentLocaleName(): string;
 }

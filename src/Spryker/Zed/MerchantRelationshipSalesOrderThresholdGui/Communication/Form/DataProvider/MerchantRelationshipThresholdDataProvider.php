@@ -95,13 +95,6 @@ class MerchantRelationshipThresholdDataProvider
         ];
     }
 
-    /**
-     * @param int $idMerchantRelationship
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     * @param \Generated\Shared\Transfer\CurrencyTransfer $currencyTransfer
-     *
-     * @return array
-     */
     public function getData(
         int $idMerchantRelationship,
         StoreTransfer $storeTransfer,
@@ -162,12 +155,6 @@ class MerchantRelationshipThresholdDataProvider
         return $storeCurrencyList;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     * @param \Generated\Shared\Transfer\CurrencyTransfer $currencyTransfer
-     *
-     * @return string
-     */
     protected function formatStoreCurrencyRowLabel(StoreTransfer $storeTransfer, CurrencyTransfer $currencyTransfer): string
     {
         return sprintf(
@@ -223,12 +210,6 @@ class MerchantRelationshipThresholdDataProvider
         return $softTypesList;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     * @param \Generated\Shared\Transfer\CurrencyTransfer $currencyTransfer
-     *
-     * @return string
-     */
     protected function formatStoreCurrencyRowValue(
         StoreTransfer $storeTransfer,
         CurrencyTransfer $currencyTransfer

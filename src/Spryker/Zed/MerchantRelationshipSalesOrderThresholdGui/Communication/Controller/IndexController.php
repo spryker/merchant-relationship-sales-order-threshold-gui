@@ -16,9 +16,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  */
 class IndexController extends AbstractController
 {
-    /**
-     * @return array
-     */
     public function indexAction(): array
     {
         $merchantRelationshipSalesOrderThresholdTable = $this->getFactory()
@@ -29,9 +26,6 @@ class IndexController extends AbstractController
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function tableAction(): JsonResponse
     {
         $merchantRelationshipSalesOrderThresholdTable = $this->getFactory()

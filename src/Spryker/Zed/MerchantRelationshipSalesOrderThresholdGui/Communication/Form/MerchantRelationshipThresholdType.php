@@ -101,11 +101,6 @@ class MerchantRelationshipThresholdType extends AbstractType
         $this->addPluginForms($builder, $options);
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);
@@ -121,9 +116,6 @@ class MerchantRelationshipThresholdType extends AbstractType
         ]);
     }
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return static::TYPE_NAME;

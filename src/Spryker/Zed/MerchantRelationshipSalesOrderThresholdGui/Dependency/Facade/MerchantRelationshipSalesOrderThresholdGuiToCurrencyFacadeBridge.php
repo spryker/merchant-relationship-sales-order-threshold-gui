@@ -32,9 +32,6 @@ class MerchantRelationshipSalesOrderThresholdGuiToCurrencyFacadeBridge implement
         return $this->currencyFacade->getAllStoresWithCurrencies();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CurrencyTransfer
-     */
     public function getCurrent(): CurrencyTransfer
     {
         return $this->currencyFacade->getCurrent();

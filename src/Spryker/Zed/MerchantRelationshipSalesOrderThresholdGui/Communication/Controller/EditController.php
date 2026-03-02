@@ -72,12 +72,6 @@ class EditController extends AbstractController
         return $this->viewResponse($viewData);
     }
 
-    /**
-     * @param int $idMerchantRelationship
-     * @param \Symfony\Component\Form\FormInterface $thresholdForm
-     *
-     * @return array
-     */
     protected function executeIndexAction(int $idMerchantRelationship, FormInterface $thresholdForm): array
     {
         $localeCollection = $this->getFactory()
@@ -109,15 +103,6 @@ class EditController extends AbstractController
         ];
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param \Symfony\Component\Form\FormInterface $thresholdForm
-     * @param int $idMerchantRelationship
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     * @param \Generated\Shared\Transfer\CurrencyTransfer $currencyTransfer
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function handleFormSubmission(
         Request $request,
         FormInterface $thresholdForm,
@@ -156,15 +141,6 @@ class EditController extends AbstractController
         return $this->redirectResponse($request->getRequestUri());
     }
 
-    /**
-     * @param array $thresholdData
-     * @param string $strategyGroup
-     * @param int $idMerchantRelationship
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     * @param \Generated\Shared\Transfer\CurrencyTransfer $currencyTransfer
-     *
-     * @return void
-     */
     protected function handleThresholdData(
         array $thresholdData,
         string $strategyGroup,
@@ -189,12 +165,6 @@ class EditController extends AbstractController
         $this->saveMerchantRelationshipSalesOrderThreshold($merchantRelationshipSalesOrderThresholdTransfer);
     }
 
-    /**
-     * @param array $thresholdData
-     * @param string $strategyGroup
-     *
-     * @return bool
-     */
     protected function canMapThresholdData(array $thresholdData, string $strategyGroup): bool
     {
         if (!isset($thresholdData[AbstractMerchantRelationshipThresholdType::FIELD_STRATEGY])) {
@@ -208,11 +178,6 @@ class EditController extends AbstractController
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantRelationshipSalesOrderThresholdTransfer $merchantRelationshipSalesOrderThresholdTransfer
-     *
-     * @return void
-     */
     protected function saveMerchantRelationshipSalesOrderThreshold(
         MerchantRelationshipSalesOrderThresholdTransfer $merchantRelationshipSalesOrderThresholdTransfer
     ): void {
@@ -231,12 +196,6 @@ class EditController extends AbstractController
             ->saveMerchantRelationshipSalesOrderThreshold($merchantRelationshipSalesOrderThresholdTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     * @param string|null $storeCurrencyRequestParam
-     *
-     * @return \Generated\Shared\Transfer\CurrencyTransfer
-     */
     protected function getCurrencyTransferFromRequestParam(StoreTransfer $storeTransfer, ?string $storeCurrencyRequestParam): CurrencyTransfer
     {
         return $this->getFactory()
@@ -244,11 +203,6 @@ class EditController extends AbstractController
             ->getCurrencyTransferFromRequestParam($storeTransfer, $storeCurrencyRequestParam);
     }
 
-    /**
-     * @param string|null $storeCurrencyRequestParam
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     protected function getStoreTransferFromRequestParam(?string $storeCurrencyRequestParam): StoreTransfer
     {
         return $this->getFactory()
@@ -256,14 +210,6 @@ class EditController extends AbstractController
             ->getStoreTransferFromRequestParam($storeCurrencyRequestParam);
     }
 
-    /**
-     * @param int|null $idMerchantRelationshipSalesOrderThreshold
-     * @param int $idMerchantRelationship
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     * @param \Generated\Shared\Transfer\CurrencyTransfer $currencyTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipSalesOrderThresholdTransfer
-     */
     protected function createMerchantRelationshipSalesOrderThresholdTransfer(
         ?int $idMerchantRelationshipSalesOrderThreshold,
         int $idMerchantRelationship,
@@ -280,21 +226,11 @@ class EditController extends AbstractController
             );
     }
 
-    /**
-     * @param int $idMerchantRelationship
-     *
-     * @return \Generated\Shared\Transfer\MerchantRelationshipTransfer
-     */
     protected function createMerchantRelationshipTransfer(int $idMerchantRelationship): MerchantRelationshipTransfer
     {
         return (new MerchantRelationshipTransfer())->setIdMerchantRelationship($idMerchantRelationship);
     }
 
-    /**
-     * @param int $idCompany
-     *
-     * @return \Generated\Shared\Transfer\CompanyTransfer
-     */
     protected function createCompanyTransfer(int $idCompany): CompanyTransfer
     {
         return (new CompanyTransfer())->setIdCompany($idCompany);

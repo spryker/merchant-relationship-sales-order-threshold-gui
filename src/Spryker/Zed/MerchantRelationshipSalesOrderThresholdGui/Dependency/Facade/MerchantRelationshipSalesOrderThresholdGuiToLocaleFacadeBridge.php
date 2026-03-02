@@ -30,9 +30,6 @@ class MerchantRelationshipSalesOrderThresholdGuiToLocaleFacadeBridge implements 
         return $this->localeFacade->getLocaleCollection();
     }
 
-    /**
-     * @return string
-     */
     public function getCurrentLocaleName(): string
     {
         return $this->localeFacade->getCurrentLocaleName();

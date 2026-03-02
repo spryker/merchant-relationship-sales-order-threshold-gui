@@ -74,11 +74,6 @@ class MerchantRelationshipSalesOrderThresholdGuiDependencyProvider extends Abstr
      */
     public const SALES_ORDER_THRESHOLD_FORM_EXPANDER_PLUGINS = 'SALES_ORDER_THRESHOLD_FORM_EXPANDER_PLUGINS';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -96,11 +91,6 @@ class MerchantRelationshipSalesOrderThresholdGuiDependencyProvider extends Abstr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function providePersistenceLayerDependencies(Container $container): Container
     {
         $container = parent::providePersistenceLayerDependencies($container);
@@ -111,11 +101,6 @@ class MerchantRelationshipSalesOrderThresholdGuiDependencyProvider extends Abstr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCurrencyFacade(Container $container): Container
     {
         $container->set(static::FACADE_CURRENCY, function (Container $container) {
@@ -125,11 +110,6 @@ class MerchantRelationshipSalesOrderThresholdGuiDependencyProvider extends Abstr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreFacade(Container $container): Container
     {
         $container->set(static::FACADE_STORE, function (Container $container) {
@@ -139,11 +119,6 @@ class MerchantRelationshipSalesOrderThresholdGuiDependencyProvider extends Abstr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMoneyFacade(Container $container): Container
     {
         $container->set(static::FACADE_MONEY, function (Container $container) {
@@ -153,11 +128,6 @@ class MerchantRelationshipSalesOrderThresholdGuiDependencyProvider extends Abstr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addLocaleFacade(Container $container): Container
     {
         $container->set(static::FACADE_LOCALE, function (Container $container) {
@@ -167,11 +137,6 @@ class MerchantRelationshipSalesOrderThresholdGuiDependencyProvider extends Abstr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipSalesOrderThresholdFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_RELATIONSHIP_SALES_ORDER_THRESHOLD, function (Container $container) {
@@ -183,11 +148,6 @@ class MerchantRelationshipSalesOrderThresholdGuiDependencyProvider extends Abstr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_RELATIONSHIP, function (Container $container) {
@@ -199,11 +159,6 @@ class MerchantRelationshipSalesOrderThresholdGuiDependencyProvider extends Abstr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyFacade(Container $container): Container
     {
         $container->set(static::FACADE_COMPANY, function (Container $container) {
@@ -215,11 +170,6 @@ class MerchantRelationshipSalesOrderThresholdGuiDependencyProvider extends Abstr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_MERCHANT_RELATIONSHIP, $container->factory(function () {
@@ -229,11 +179,6 @@ class MerchantRelationshipSalesOrderThresholdGuiDependencyProvider extends Abstr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantRelationshipSalesOrderThresholdPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_MERCHANT_RELATIONSHIP_SALES_ORDER_THRESHOLD, $container->factory(function () {
@@ -243,11 +188,6 @@ class MerchantRelationshipSalesOrderThresholdGuiDependencyProvider extends Abstr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addSalesOrderThresholdFormExpanderPlugins(Container $container): Container
     {
         $container->set(static::SALES_ORDER_THRESHOLD_FORM_EXPANDER_PLUGINS, function (Container $container) {

@@ -52,11 +52,6 @@ class MerchantRelationshipThresholdDataProviderResolver implements MerchantRelat
         return new $dataProvider($this->formExpanderPlugins);
     }
 
-    /**
-     * @param string $salesOrderThresholdTypeGroup
-     *
-     * @return bool
-     */
     public function hasMerchantRelationshipThresholdDataProviderByStrategyGroup(string $salesOrderThresholdTypeGroup): bool
     {
         return array_key_exists($salesOrderThresholdTypeGroup, $this->config->getStrategyGroupToDataProviderMap());

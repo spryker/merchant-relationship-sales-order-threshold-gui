@@ -12,9 +12,6 @@ use Orm\Zed\MerchantRelationshipSalesOrderThreshold\Persistence\SpyMerchantRelat
 
 interface MerchantRelationshipSalesOrderThresholdGuiRepositoryInterface
 {
-    /**
-     * @return \Orm\Zed\MerchantRelationship\Persistence\SpyMerchantRelationshipQuery
-     */
     public function getMerchantRelationshipTableQuery(): SpyMerchantRelationshipQuery;
 
     /**
