@@ -54,8 +54,8 @@ $(document).ready(function () {
         var idMerchantRelationship = $('#merchant-relationship-threshold_idMerchantRelationship').val();
         window.location.href =
             '/merchant-relationship-sales-order-threshold-gui/edit?id-merchant-relationship=' +
-            idMerchantRelationship +
+            encodeURIComponent(idMerchantRelationship) +
             '&store_currency=' +
-            $(this).val();
+            encodeURIComponent($(this).val());
     });
 });
