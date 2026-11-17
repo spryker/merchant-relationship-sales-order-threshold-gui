@@ -39,7 +39,7 @@ class StoreCurrencyFinder implements StoreCurrencyFinderInterface
             return $this->currencyFacade->fromIsoCode($storeTransfer->getDefaultCurrencyIsoCodeOrFail());
         }
 
-        [$_, $currencyCode] = explode(
+        [, $currencyCode] = explode(
             MerchantRelationshipSalesOrderThresholdGuiConfig::STORE_CURRENCY_DELIMITER,
             $storeCurrencyRequestParam,
         );
